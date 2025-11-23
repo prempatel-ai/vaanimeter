@@ -1,0 +1,6 @@
+streamlit
+nltk
+language-tool-python
+matplotlib
+reportlab
+numpy
