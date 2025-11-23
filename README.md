@@ -1,8 +1,3 @@
-Here is your updated, polished **README.md** with the GitHub clone instruction added at the perfect place and written professionally to impress reviewers.
-
-I’ve placed the cloning section *right before* the local setup instructions — the best UX for developers.
-
----
 
 # 🌟 **VaaniMeter**
 
