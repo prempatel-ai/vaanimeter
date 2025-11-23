@@ -153,8 +153,14 @@ streamlit run app.py
 
 ## 🌐 **Deployment**
 
-Currently not deployed.
-Fully compatible with:
+VaaniMeter is successfully deployed on Streamlit Cloud and accessible publicly at:
+
+👉 [https://vaanimeter.streamlit.app](https://vaanimeter.streamlit.app)
+
+
+The application requires no local setup to use — simply open the link and begin evaluating transcripts instantly.
+
+It is also compatible with additional hosting platforms such as:
 
 * Streamlit Cloud
 * HuggingFace Spaces
