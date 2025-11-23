@@ -1,4 +1,8 @@
- 
+Here is your updated, polished **README.md** with the GitHub clone instruction added at the perfect place and written professionally to impress reviewers.
+
+I’ve placed the cloning section *right before* the local setup instructions — the best UX for developers.
+
+---
 
 # 🌟 **VaaniMeter**
 
@@ -11,7 +15,7 @@
 **VaaniMeter** is an AI-powered evaluation tool designed to score spoken self-introductions using a **strict, deterministic rubric**.
 It provides instant feedback, transparent scoring, radar-chart visualization, and a downloadable professional PDF report.
 
-The tool brings structure, clarity, and objectivity to communication assessment—making it ideal for academic evaluation, skill-building, and training environments.
+The tool brings structure, clarity, and objectivity to communication assessment—making it ideal for academic evaluation, skill-building, and learning environments.
 
 ---
 
@@ -34,43 +38,43 @@ Scores are computed across five categories:
 
 ### 🔹 Transparent Score Breakdown
 
-Users can view **how each point was calculated**, including:
+Shows **exactly how each score was calculated**, including:
 
-* Keyword matches
+* Keyword detection
 * Grammar analysis
-* Filler rate
+* Filler percentages
 * Sentiment score
 * WPM category mapping
-* Flow structure rating
+* Flow structure quality
 
 ### 🔹 Radar Chart Visualization
 
-A spider chart helps users visually understand their performance across categories.
+A spider chart provides a visual overview of strengths and weaknesses.
 
 ### 🔹 PDF Report Generation
 
-Download a professional report containing:
+Download a clean, professional report containing:
 
 * Input transcript
-* All scoring components
-* Radar chart visualization
-* Strengths & improvement areas
-* Final score summary
+* Rubric category scores
+* Radar chart
+* Strengths & improvement insights
+* Final summary
 
 ### 🔹 JSON Output (Optional)
 
-Advanced users can view raw JSON scoring data.
+Raw structured data for developers or advanced reviewers.
 
 ---
 
 ## 📁 **Project Structure**
 
-| File               | Description                                                                           |
-| ------------------ | ------------------------------------------------------------------------------------- |
-| `app.py`           | Main Streamlit interface: input handling, UI components, chart rendering, PDF export. |
-| `scorer.py`        | Core scoring engine implementing the strict rubric evaluation logic.                  |
-| `utils.py`         | Helper utilities for NLP tools, radar chart rendering, and PDF report generation.     |
-| `requirements.txt` | Python dependency list.                                                               |
+| File               | Description                                                                    |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `app.py`           | Streamlit UI: input handling, score display, chart visualizations, PDF export. |
+| `scorer.py`        | Core scoring engine implementing strict rubric logic.                          |
+| `utils.py`         | NLP utilities, radar chart functions, and PDF report generation tools.         |
+| `requirements.txt` | Dependency list.                                                               |
 
 ---
 
@@ -80,63 +84,56 @@ Advanced users can view raw JSON scoring data.
 
 Checks:
 
-* Quality of salutation
-* Presence of must-have keywords: *Name, Age, Class/School, Family, Hobbies*
-* Presence of good-to-have details: fun fact, goal, strengths, etc.
-* Flow and natural ordering of introduction sections
+* Salutation quality
+* Must-have keywords (*Name, Age, Class/School, Family, Hobbies*)
+* Good-to-have details (fun fact, goal, strengths, achievements, etc.)
+* Flow and logical order
 
 ### **2. Speech Rate (10 pts)**
 
-Assumes a fixed **52-second** speaking duration
-Computes WPM:
+Uses a fixed **52-second** duration assumption:
 
 ```
 wpm = total_words / (52/60)
 ```
 
-Ideal score range: **111–140 WPM**
+Ideal WPM: **111–140**
 
 ### **3. Language (20 pts)**
 
-* Grammar scoring using **LanguageTool**
-* Vocabulary quality measured by **Type-Token Ratio (TTR)**
+* Grammar: via **LanguageTool**
+* Vocabulary: via **Type-Token Ratio (TTR)**
 
 ### **4. Clarity (15 pts)**
 
 Detects filler words:
-`"um, uh, like, you know, hmm, kinda, sort of"`
-Score based on filler percentage.
+`"um", "uh", "like", "you know", "hmm", "kinda", "sort of"`
+Scoring based on filler percentage.
 
 ### **5. Engagement (15 pts)**
 
-Uses **VADER sentiment analysis** to measure positivity and overall tone.
+Uses **VADER sentiment analysis** for positivity.
 
 ---
 
 ## 🔄 **End-to-End Data Flow**
 
-1. **User Input**
-   Text is pasted or uploaded.
+1. **User Input** (textarea or txt file)
+2. **Processing** → `app.py` sends transcript to `calculate_final_score()`
+3. **Analysis** → `scorer.py` performs all NLP + scoring steps
+4. **Visualization** → `utils.create_radar_chart()`
+5. **PDF Report** → `utils.create_pdf_report()`
+6. **Output** → scores, breakdowns, chart, and report in Streamlit
 
-2. **Processing**
-   `app.py` sends transcript to `IntroductionScorer.calculate_final_score()`.
+---
 
-3. **Analysis**
-   `scorer.py`:
+# 📥 **Clone This Repository**
 
-   * cleans text
-   * runs NLP tools
-   * computes all category scores
-   * generates JSON output
+To get started, first clone the project:
 
-4. **Visualization**
-   `create_radar_chart()` renders a spider chart.
-
-5. **Report Generation**
-   `create_pdf_report()` generates a downloadable report using ReportLab.
-
-6. **Output**
-   Streamlit displays all scores, breakdowns, and visualizations.
+```
+git clone https://github.com/prempatel-ai/vaanimeter.git
+```
 
 ---
 
@@ -161,8 +158,8 @@ streamlit run app.py
 
 ## 🌐 **Deployment**
 
-Not yet deployed.
-The project is fully compatible with:
+Currently not deployed.
+Fully compatible with:
 
 * Streamlit Cloud
 * HuggingFace Spaces
@@ -173,39 +170,38 @@ The project is fully compatible with:
 
 ## 🧪 **Testing**
 
-Testing was done on:
+Evaluated using three categories of transcripts:
 
-* High-quality transcripts (expected: **>80**)
-* Average transcripts (**50–70**)
-* Poor transcripts (**<40**)
+* High-quality → **>80**
+* Average → **50–70**
+* Poor → **<40**
 
-Old testing scripts are removed after cleanup.
-The final scoring matches rubric expectations consistently.
+The scoring strongly matches rubric expectations.
 
 ---
 
 ## ✨ **What Makes VaaniMeter Unique**
 
-* Uses a **strict professional rubric**, not generic NLP heuristics
-* Transparent and explainable scoring
-* Professional-grade PDF reporting
-* Visual feedback through radar chart
-* Designed with clarity, fairness, and educational use-cases in mind
+* Applies a **clear, strict rubric**, not vague NLP scoring
+* Transparent and explainable output
+* Professional PDF reporting
+* Modern visual radar analysis
+* Built for fairness and educational use
 
 ---
 
 ## ⚠️ **Known Limitations**
 
-* Assumes fixed 52-second audio duration; actual speaking speed may differ
-* Semantic similarity has been intentionally removed per task requirement
-* Grammar scoring relies on automated tools which may not catch all context-based errors
+* Uses fixed 52s duration for WPM → may differ from real audio
+* Semantic similarity intentionally removed as per task requirement
+* Grammar detection may miss deep contextual issues
 
 ---
 
 ## 💙 **Acknowledgments**
 
-This project was created as part of the Nirmaan Education AI Internship Case Study
-— to demonstrate product thinking, communication assessment design, and practical AI engineering.
+Created as part of the **Nirmaan Education AI Internship Case Study**
+to demonstrate product thinking, communication analysis design, and practical AI engineering through a clean, transparent scoring tool.
 
 ---
 
